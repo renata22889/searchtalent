@@ -1,0 +1,33 @@
+
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+
+    <h2>Find a doctor in your area</h2><br><br><br><br>
+
+    <form action="/quote" method="post">
+        <div class="form-group">
+
+            <!-- input city and facility-->
+            <input autocomplete="off" autofocus class="form-control" name="city" placeholder="city" type="text">
+            <input autocomplete="off" autofocus class="form-control" name="facility" placeholder="facility" type="text">
+
+            <!-- choose area of expertise-->
+            <select id="areas" name="area_of_expertise" class="form-control" >
+                    <option value= "Allergy and Immunology">Allergy and Immunology</option>
+                    <option value= "Anesthesiology">Anesthesiology</option>
+                    <option value= "Colon and Rectal Surgery">Colon and Rectal Surgery</option>
+                    <option value= "Dermatology">Dermatology</option>
+                    <option value= "Emergency Medicine">Emergency Medicine</option>
+                <option value="placeholder_symbol" disabled selected hidden>Choose area of expertise</option>
+            </select>
+
+        </div><br>
+        <button class="btn btn-primary" type="submit">Go!</button>
+    </form>
+{% endblock %}

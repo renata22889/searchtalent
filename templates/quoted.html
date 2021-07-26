@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Results
+{% endblock %}
+
+{% block main %}
+
+    <div class="container">
+        <div class="section">
+
+            <h2>Your results</h2><br><br>
+            <table>
+                <thead>
+                    <tr>
+                        <th>First name</th>
+                        <th>Last name</th>
+                        <th>Email</th>
+                        <th>City</th>
+                        <th>Area of expertise</th>
+                        <th>Facility</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <!-- Loop through the results to display them in this table -->
+                    {% for data in datas %}
+                        <tr>
+                            <td>{{ data.first_name }}</td>
+                            <td>{{ data.last_name }}</td>
+                            <td>{{ data.email }}</td>
+                            <td>{{ data.city }}</td>
+                            <td>{{ data.area_of_expertise }}</td>
+                            <td>{{ data.facility }}</td>
+                        </tr>
+                    {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}
